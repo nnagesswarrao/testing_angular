@@ -1,0 +1,30 @@
+// .text-makeup {
+//         /* padding: 10px; */
+//     /* margin: 10px; */
+//     font-size: 18px;
+//     margin: 0 0 15px 0 !important;
+// }
+div {
+    span {
+        .text-makeup {
+            font-size: 18px !important;
+            margin: 0 0 15px 0 !important;
+        }
+    }
+}
+
+.show-madal {
+    height: 90% !important;
+    width: 90% !important;
+    margin: auto !important;
+}
+
+.isActive {
+    color: green;
+    cursor: pointer;
+}
+
+// .inative {
+//     cursor: pointer;///
+// }
+

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>Header</ion-title> -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col>BibleWords</ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div>
+
+  </div>
+
+
+
+  <ion-card>
+    <div class="words-genaration">
+
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-input></ion-input>
+        </ion-col>
+        <ion-col size="6">
+          <button (click)="getBibelWords()">submit</button>
+        </ion-col>
+
+      </ion-row>
+
+    </div>
+  </ion-card>
+
+  <ion-card>
+    <div>
+       <app-frames-ejsrender [version]="Version" (imageData)="getImagedata($event)"></app-frames-ejsrender> 
+      <!-- <img src="assets/images/frame1.jpg" /> -->
+    </div>
+  </ion-card>
+
+
+</ion-content>

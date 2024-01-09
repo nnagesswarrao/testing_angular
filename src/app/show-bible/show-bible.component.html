@@ -1,0 +1,62 @@
+<!-- <p>
+  show-bible works! xz x
+</p> -->
+
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>Header</ion-title> -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col (click)="onOpenModal(true)">{{data.BookName}}</ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <!-- <h1>Content</h1> -->
+  <!-- <div [innerHTML]="data.chapterStr" id="chapter-data" ></div> -->
+  <div *ngFor="let bb of data.Versions;let i=index">
+    <p [ngClass]="bb.isSelected ? 'isActive' : 'inative'" (click)="coppiedSelectedText(bb.Verse)" ><span>{{i+1}} . </span>
+      {{bb.Verse}} </p>
+  </div>
+
+</ion-content>
+
+<!-- <ion-button (click)="onOpenModal(true)">Modal</ion-button> -->
+
+<div>
+
+  <ion-modal [isOpen]="isModalOpen" class="show-madal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Select Verse</ion-title>
+          <!-- <ion-buttons slot="end">
+                      <ion-button>Close</ion-button>
+                    </ion-buttons> -->
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div>
+          <app-bible (onChangedatad)="onVerseData($event)"></app-bible>
+        </div>
+        <!-- <p>
+          To close this modal, please use the "Close" button provided. Note that swiping the modal will not dismiss
+          it.
+        </p> -->
+      </ion-content>
+      <ion-footer>
+        <ion-toolbar>
+          <ion-button (click)="onOpenModal(false)" slot="end">Cancel</ion-button>
+        </ion-toolbar>
+      </ion-footer>
+    </ng-template>
+  </ion-modal>
+
+</div>
