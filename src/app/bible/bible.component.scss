@@ -1,3 +1,34 @@
-.scrool-text{
-    overflow-y: scroll;
+.scrool-text {
+    height: 610px !important;
+    overflow: auto !important;
+    // font-size: 12px !important;
+}
+
+.font-12 {
+    font-size: 12px !important;
+}
+
+// .font-10 {
+//     font-size: 12px !important;
+// }
+
+ion-col.hideline {
+    -webkit-padding-start: 0 !important;
+    padding-inline-start: 0 !important;
+    -webkit-padding-end: 0 !important;
+    padding-inline-end: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+.borde-gry {
+    border: 1px solid #222222;
+}
+
+.with-200px {
+    width: 200px;
+}
+
+.fntwt {
+    font-weight: 100;
 }

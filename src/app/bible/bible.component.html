@@ -1,26 +1,70 @@
- <ion-row>
-  <ion-col size="8">
+<!-- <div class="row">
+  <div class="col-md-12">Book</div>
+  <div class="col-md-6">Chapter</div>
+  <div class="col-md-6">Verse</div>
+</div> -->
+<table>
+  <thead>
+    <tr>
+      <th class="borde-gry with-200px font-12 fntwt">Book</th>
+      <th class="borde-gry font-12 fntwt ">Ch..</th>
+      <th class="borde-gry font-12 fntwt">Ver..</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3">
+        <ion-row>
+          <ion-col size="8" class="scrool-text hideline">
+            <ion-list>
+              <ion-item *ngFor="let k of data.books">
+                <ion-label (click)="onSelectBook(k)" class="font-12 ">{{k.name}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+          <ion-col size="2" class="scrool-text hideline borde-gry">
+            <ion-list>
+              <ion-item *ngFor="let k of data.chapters">
+                <ion-label (click)="onSelectChapter(k)" class="font-12">{{k.chpter_id}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+          <ion-col size="2" class="scrool-text hideline borde-gry">
+            <ion-list>
+              <ion-item *ngFor="let k of data.version;let i=index">
+                <ion-label (click)="onSelectVersion(k)" class="font-12">{{i+1}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- <ion-row>
+  <ion-col size="8" class="scrool-text">
     <ion-list>
       <ion-item *ngFor="let k of data.books">
-        <ion-label (click)="onSelectBook(k)">{{k.name}}</ion-label>
+        <ion-label (click)="onSelectBook(k)" class="font-12 ">{{k.name}}</ion-label>
       </ion-item>
     </ion-list>
   </ion-col>
-  <ion-col size="2">
-      <ion-list>
-        <ion-item *ngFor="let k of data.chapters">
-          <ion-label (click)="onSelectChapter(k)">{{k.chpter_id}}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-col>
-  <ion-col size="2">
-      <ion-list>
-        <ion-item *ngFor="let k of data.version;let i=index">
-          <ion-label (click)="onSelectVersion(k)">{{i+1}}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-col>
-</ion-row> 
+  <ion-col size="2" class="scrool-text">
+    <ion-list>
+      <ion-item *ngFor="let k of data.chapters">
+        <ion-label (click)="onSelectChapter(k)" class="font-10">{{k.chpter_id}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+  <ion-col size="2" class="scrool-text">
+    <ion-list>
+      <ion-item *ngFor="let k of data.version;let i=index">
+        <ion-label (click)="onSelectVersion(k)" class="font-10">{{i+1}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+</ion-row> -->
 
 <!-- <table>
   <tr>

@@ -12,7 +12,7 @@ import { CommonService } from '../service/common.service';
   styleUrls: ['./show-bible.component.scss'],
 })
 export class ShowBibleComponent implements OnInit {
-  biblesdata:any;
+  biblesdata: any;
   isModalOpen = false;
   data: any = {
     verse: {},
@@ -31,7 +31,7 @@ export class ShowBibleComponent implements OnInit {
 
 
   constructor(private apiService: ApiService, private cmnService: CommonService) {
-    this.biblesdata=this.apiService.getBible()
+    this.biblesdata = this.apiService.getBible()
     // var booklength = this.biblesdata.Book.length;
     // console.log(this.biblesdata, booklength);
     // var Booid = Math.floor(Math.random() * booklength)
@@ -62,7 +62,7 @@ export class ShowBibleComponent implements OnInit {
     console.log(event);
     this.getPassageData(event);
     this.data.BookName = event.bk_nm;
-    localStorage.setItem('vRsnsData', JSON.stringify(event))
+    localStorage.setItem('vRsnsData', JSON.stringify(event));
     this.isModalOpen = !this.isModalOpen;
 
 

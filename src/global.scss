@@ -31,3 +31,23 @@
   font-size: 16px !important;
   margin: -1px 0 -14px 0 !important
 }
+
+// ion-modal {
+//   ion-content.modelcontent {
+//     padding-top: 0 !important;
+//     padding-bottom: 0 !important;
+//   }
+// }
+
+ion-modal {
+  ion-content.modelcontent {
+    --padding-bottom: 0px; // Example: Override bottom padding
+    --padding-top: 0px; // Example: Override top padding
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    --padding-start: var(--ion-padding, 16px);
+    --padding-end: var(--ion-padding, 16px);
+    padding-inline-start: var(--ion-padding, 16px);
+    padding-inline-end: var(--ion-padding, 16px);
+  }
+}

@@ -22,7 +22,8 @@
   <!-- <h1>Content</h1> -->
   <!-- <div [innerHTML]="data.chapterStr" id="chapter-data" ></div> -->
   <div *ngFor="let bb of data.Versions;let i=index">
-    <p [ngClass]="bb.isSelected ? 'isActive' : 'inative'" (click)="coppiedSelectedText(bb.Verse)" ><span>{{i+1}} . </span>
+    <p [ngClass]="bb.isSelected ? 'isActive' : 'inative'" (click)="coppiedSelectedText(bb.Verse)"><span>{{i+1}} .
+      </span>
       {{bb.Verse}} </p>
   </div>
 
@@ -42,7 +43,7 @@
                     </ion-buttons> -->
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding">
+      <ion-content class="modelcontent">
         <div>
           <app-bible (onChangedatad)="onVerseData($event)"></app-bible>
         </div>
