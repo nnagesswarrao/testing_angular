@@ -19,21 +19,24 @@
           <ion-col size="8" class="scrool-text hideline">
             <ion-list>
               <ion-item *ngFor="let k of data.books">
-                <ion-label (click)="onSelectBook(k)" class="font-12 ">{{k.name}}</ion-label>
+                <ion-label (click)="onSelectBook(k)" 
+                  [ngClass]="k.isSelect ? ' isSelect font-12' : 'font-12' ">{{k.name}}</ion-label>
               </ion-item>
             </ion-list>
           </ion-col>
           <ion-col size="2" class="scrool-text hideline borde-gry">
             <ion-list>
               <ion-item *ngFor="let k of data.chapters">
-                <ion-label (click)="onSelectChapter(k)" class="font-12">{{k.chpter_id}}</ion-label>
+                <ion-label (click)="onSelectChapter(k)"
+                  [ngClass]="k.isSelect ? ' isSelect font-12' : 'font-12' ">{{k.chpter_id}}</ion-label>
               </ion-item>
             </ion-list>
           </ion-col>
           <ion-col size="2" class="scrool-text hideline borde-gry">
             <ion-list>
               <ion-item *ngFor="let k of data.version;let i=index">
-                <ion-label (click)="onSelectVersion(k)" class="font-12">{{i+1}}</ion-label>
+                <ion-label (click)="onSelectVersion(k)"
+                  [ngClass]="k.isSelect ? ' isSelect font-12' : 'font-12' ">{{i+1}}</ion-label>
               </ion-item>
             </ion-list>
           </ion-col>

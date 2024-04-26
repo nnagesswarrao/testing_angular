@@ -19,9 +19,10 @@ export class ShowBibleComponent implements OnInit {
     TotalChapter: {},
     chapterStr: '',
     selectedVerse: {
+      vrsn_id:1, chptr_id: 1, bk_nm: 'ఆదికాండం', book_id: 1,
       bibleId: "5b835ce16a1703ff-01", bookId: "GEN",
       chapterId: "GEN.1", id: "GEN.1.1", verse_id: 'verse_id is id',
-      reference_nm: 'rఆదికాండం', reference_id: '1', chapter_Ids: '1'
+      reference_nm: 'ఆదికాండం', reference_id: '1', chapter_Ids: '1'
     },
     Versions: [],
     BookName: 'ఆదికాండం',
@@ -49,6 +50,9 @@ export class ShowBibleComponent implements OnInit {
     const localSene = JSON.parse(t)
     if (localSene && [localSene] && [localSene].length && [localSene].length > 0) {
       this.getPassageData(localSene);
+    } else {
+
+      this.getPassageData(this.data.selectedVerse);
     }
   }
 
