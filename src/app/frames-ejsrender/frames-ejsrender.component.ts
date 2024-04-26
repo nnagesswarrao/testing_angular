@@ -10,6 +10,7 @@ import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 export class FramesEjsrenderComponent implements OnInit, OnChanges {
   @Output() imageData: EventEmitter<object> = new EventEmitter();
   @Input() version: any = {};
+  wordDate=new Date()
   constructor() {
     console.log(this.version, "[[[[[[[[")
     // this.imageData.emit({ data: "nagesswararo" });
@@ -25,14 +26,14 @@ export class FramesEjsrenderComponent implements OnInit, OnChanges {
     console.log(data, this.version);
 
     this.convertHtmltoImages()
-    console.log(this.imgTags, "pppppppppppppppppppppppppppppppppppppppppppppppppppp")
+     console.log(this.imgTags, "pppppppppppppppppppppppppppppppppppppppppppppppppppp")
   }
 
 
   convertHtmltoImages = () => {
     var framedata = document.getElementById('covert-frame') as HTMLElement;
     var imgUrl = (m: any) => {
-      console.log(m, "img");
+       console.log(m, "img");
       this.imgTags = m;
       //save image cde
       // document.location = m;

@@ -1,7 +1,24 @@
-.passages{
+.passages {
     position: absolute;
-    top: 150px;
-    left: 100px;
+    color: #474242;
+    bottom: 13px;
+    font-size: 10px;
+    text-align: center;
+    width: 70%;
+}
+
+.imgcontainer {
+    position: relative;
+    text-align: center;
     color: white;
-    bottom: 50px;
+
+}
+
+.passages1 {
+    position: absolute;
+    color: #474242;
+    bottom: 130px;
+    /* font-size: 10px; */
+    /* text-align: center; */
+    width: 70%;
 }

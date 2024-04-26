@@ -1,15 +1,18 @@
-
 <div id="covert-frame">
-  <ion-card >
-    <div>
-      <img src="assets/images/frame1.jpg" />
-      <p class="passages">
-{{this.version.refVersion}}
+  <ion-card>
+    <div class="imgcontainer">
+      <img src="assets/images/frame2.png" alt="Snow" style="width:100%;height: 150px;" />
 
-      </p>
+      <div class="passages1">
+        {{ version.wordName ? (version.wordName +" - " ): ' '}}
+        {{ wordDate | date:'yyyy-MM-dd'}}
+      </div>
+      <div class="passages">
+        {{version.refVersion}}
+      </div>
     </div>
   </ion-card>
   <!-- <div *ngIf="imgTags">
-<img [src]="imgTags">
+    <img [src]="imgTags">
   </div> -->
 </div>
