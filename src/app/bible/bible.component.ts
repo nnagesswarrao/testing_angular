@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ApiService } from '../service/api-service.service';
+import { BibleService } from '../services/bible.service';
 // import bibileJson from '../../assets/bible.json';
 
 @Component({
@@ -30,7 +31,7 @@ export class BibleComponent implements OnInit {
 
   }
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private bibleService: BibleService) {
     this.data.books = this.getBibledata();
 
   }
@@ -93,6 +94,7 @@ export class BibleComponent implements OnInit {
       k.isSelect = false
     });
     event.isSelect = true;
+    this.bibleService.triggerScrollToVerse(event.vrsn_id);
     this.onChangedatad.emit(event);
   }
   prepareBibledata = () => {
@@ -139,6 +141,10 @@ export class BibleComponent implements OnInit {
     // this.scrollToSelected();
 
 
+  }
+
+  onVerseSelected(verseNumber: number) {
+    this.bibleService.triggerScrollToVerse(verseNumber);
   }
 
 }

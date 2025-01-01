@@ -14,9 +14,50 @@ div {
 }
 
 .show-madal {
-    height: 100% !important;
-    width: 100% !important;
-    margin: auto !important;
+    --height: 100%;
+    --width: 100%;
+    
+    ion-header {
+        ion-toolbar {
+            --background: #f8f9fa;
+            
+            ion-title {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .modelcontent {
+        --padding-top: 0;
+        --padding-bottom: 0;
+        
+        ion-list {
+            margin: 0;
+            padding: 0;
+            
+            ion-item {
+                --padding-start: 16px;
+                --padding-end: 16px;
+                --min-height: 48px;
+                
+                &:hover {
+                    --background: #f5f5f5;
+                }
+            }
+        }
+    }
+
+    ion-footer {
+        ion-toolbar {
+            --padding-end: 16px;
+            
+            ion-button {
+                --padding-start: 24px;
+                --padding-end: 24px;
+            }
+        }
+    }
 }
 
 .isActive {
@@ -32,3 +73,106 @@ div {
 //     padding-top: 0 !important;
 //     padding-bottom: 0 !important;
 // }
+
+// Styles for the Bible content section
+ion-content {
+  .ion-padding {
+    padding: 16px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 12px 0;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+
+    span {
+      font-weight: bold;
+      color: #666;
+      margin-right: 8px;
+    }
+
+    // Add selection styles
+    &::selection {
+      background-color: #3880ff40; // Semi-transparent primary Ionic color
+      color: var(--ion-text-color);
+    }
+    &::-moz-selection {
+      background-color: #3880ff40;
+      color: var(--ion-text-color);
+    }
+
+    &.isActive {
+      background-color: #e6f3ff;
+      border-left: 3px solid #3880ff;
+      
+      // Different selection color for active verses
+      &::selection {
+        background-color: #3880ff60; // Slightly more opaque for active verses
+      }
+      &::-moz-selection {
+        background-color: #3880ff60;
+      }
+    }
+
+    &.inative {
+      &:hover {
+        background-color: #f5f5f5;
+        cursor: pointer;
+      }
+
+      // Add a subtle transition when copying
+      &:active {
+        background-color: #e0e0e0;
+        transition: background-color 0.1s ease;
+      }
+    }
+
+    &.highlight-scroll {
+      animation: highlight-fade 2s ease-out !important;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+@keyframes highlight-fade {
+  0% {
+    background-color: rgba(255, 215, 0, 0.5);
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  70% {
+    background-color: rgba(255, 215, 0, 0.3);
+    transform: scale(1.01);
+  }
+  100% {
+    background-color: transparent;
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+// Make sure scrolling is smooth
+:host {
+  scroll-behavior: smooth;
+}
+
+// Make sure verses are clickable and have proper spacing
+ion-content {
+  .ion-padding {
+    p {
+      position: relative;
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
